@@ -12,7 +12,7 @@ module Sorcery
 
       def save(options = {})
         mthd = options.delete(:raise_on_failure) ? :save! : :save
-        @model.send(mthd, options)
+        @model.send(mthd, **options)
       end
 
       def increment(field)
